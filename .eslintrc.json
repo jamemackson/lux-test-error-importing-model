@@ -1,0 +1,30 @@
+{
+  "parser": "babel-eslint",
+  "extends": "eslint:recommended",
+  "env": {
+    "node": true
+  },
+  "globals": {
+    "Map": true,
+    "Set": true,
+    "Proxy": true,
+    "Promise": true,
+    "Reflect": true,
+    "WeakMap": true,
+    "WeakSet": true,
+    "Iterable": true,
+    "afterAll": true,
+    "afterEach": true,
+    "beforeAll": true,
+    "beforeEach": true,
+    "Class": true,
+    "describe": true,
+    "expect": true,
+    "Generator": true,
+    "it": true,
+    "jasmine": true,
+    "jest": true,
+    "Process": true,
+    "test": true
+  }
+}

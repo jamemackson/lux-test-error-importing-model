@@ -1,0 +1,55 @@
+{
+  "name": "lux-test-error-importing-model",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "lux serve",
+    "test": "NODE_ENV=test jest"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "6.17.0",
+    "babel-preset-lux": "2.0.1",
+    "knex": "0.12.6",
+    "lux-framework": "1.1.7",
+    "lux-jwt": "^0.2.2",
+    "sqlite3": "3.1.8"
+  },
+  "engines": {
+    "node": ">= 6.0"
+  },
+  "devDependencies": {
+    "babel-jest": "^20.0.0",
+    "jest": "^20.0.0"
+  },
+  "jest": {
+    "verbose": true,
+    "testRegex": "\\.test\\.js$",
+    "testEnvironment": "jest-environment-node",
+    "cacheDirectory": "./.jest-cache",
+    "collectCoverageFrom": [
+      "**/*.js"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "text-summary"
+    ],
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/_test/"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/db/",
+      "/_test/",
+      "/test/",
+      "/__tests__/",
+      "/node_modules/"
+    ]
+  }
+}
