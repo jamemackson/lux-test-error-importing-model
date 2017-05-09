@@ -1,3 +1,57 @@
 {
-  "presets": ["lux"]
+  "env": {
+    "development": {
+      "presets": [
+        ["env", {
+          "targets": {
+            "node": 7.10
+          },
+          "modules": false
+        }]
+      ],
+      "plugins": [
+        "external-helpers",
+        "transform-class-properties",
+        "transform-flow-strip-types",
+        "transform-object-rest-spread"
+      ]
+    },
+    "test": {
+      "presets": [
+        ["env", {
+          "targets": {
+            "node": 7.5
+          },
+          "modules": false
+        }]
+      ],
+      "plugins": [
+        // "external-helpers",
+        "transform-class-properties",
+        "transform-flow-strip-types",
+        "transform-es2015-modules-commonjs",
+        "transform-exponentiation-operator",
+        "transform-async-to-generator",
+        ["transform-object-rest-spread", {
+          "useBuiltIns": true
+        }]
+      ]
+    },
+    "production": {
+      "presets": [
+        ["env", {
+          "targets": {
+            "node": 7.5
+          },
+          "modules": false
+        }]
+      ],
+      "plugins": [
+        "external-helpers",
+        "transform-class-properties",
+        "transform-flow-strip-types",
+        "transform-object-rest-spread"
+      ]
+    }
+  }
 }
