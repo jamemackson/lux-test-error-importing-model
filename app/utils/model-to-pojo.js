@@ -5,7 +5,7 @@ export default function modelToPojo(model, fields) {
     fieldNames = model.constructor.attributeNames;
   }
 
-  if (model && fields) {
+  if (model && fieldNames) {
     result = model.getAttributes(...fieldNames);
   }
   return result;

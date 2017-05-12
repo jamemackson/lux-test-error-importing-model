@@ -1,19 +1,26 @@
-import User from '../models/user';
+import { User } from '../../dist/bundle';
 
 import {
-  default as modelToPojo
-} from './modelsToPojo';
+  default as toPojo
+} from './model-to-pojo';
 
 test('module exports functions', () => {
-  expect(typeof modelToPojo === 'function').toBeTruthy();
+  expect(typeof toPojo === 'function').toBeTruthy();
 });
 
-test('can convert 1 model', () => {
+test('can convert 1 model', async () => {
   const userData = {
-    firstName: 'jame',
-    lastName: 'mackson'
+    name: 'jame',
+    email: 'jame@example.com',
+    password: 'abc123'
   };
-  const user = User.create(userData);
+  const user = await User.create(userData);
+  const fields = ['name', 'email'];
+  console.log('attrs', user.constructor.attributeNames);
 
-  expect(modelToPojo(user)).toMatchObject(userData);
+  const data = user.getAttributes('name', 'email');
+  // const data = toPojo(user, fields);
+  console.log('data is: ', data);
+
+  expect(data).toMatchObject(userData);
 });
